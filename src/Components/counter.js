@@ -24,11 +24,7 @@ class Counter extends Component {
           {this.formatCount()}
         </span>
         <button className="btn btn-secondary btn-sm">Increment</button>
-        <ul>
-          {this.state.tags.map(tag => (
-            <li key={tag}>{tag}</li>
-          ))}
-        </ul>
+        <ul>{this.renderList()}</ul>
       </div>
     );
   }
@@ -44,6 +40,12 @@ class Counter extends Component {
     let { count } = this.state;
     return count === 0 ? "Zero" : count;
   }
+
+  //React is not a templating engine like angular so there are no loops, conditional statements etc
+  renderList() {
+    return this.state.tags.map(tag => <li key={tag}>{tag}</li>);
+  }
+  renderTagsConditionally() {}
 }
 
 export default Counter;
