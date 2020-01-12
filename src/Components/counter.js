@@ -20,6 +20,7 @@ class Counter extends Component {
         <span style={{ fontSize: 30 }} className="badge badge-primary m-2"> 
           {this.formatCount()} 
         */}
+        {this.renderTagsConditionally()}
         <span style={this.styles} className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span>
@@ -45,7 +46,12 @@ class Counter extends Component {
   renderList() {
     return this.state.tags.map(tag => <li key={tag}>{tag}</li>);
   }
-  renderTagsConditionally() {}
+
+  //Method to achieve conditional rendering use javascript
+  renderTagsConditionally() {
+    let tagLength = this.state.tags.length;
+    return tagLength === 0 ? <p>No tags</p> : <p>The tags are :</p>;
+  }
 }
 
 export default Counter;
