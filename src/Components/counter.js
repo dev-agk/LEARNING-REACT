@@ -21,11 +21,6 @@ class Counter extends Component {
           {this.formatCount()} 
         */}
         {this.renderTagsConditionally()}
-        <span style={this.styles} className={this.getBadgeClasses()}>
-          {this.formatCount()}
-        </span>
-        <button className="btn btn-secondary btn-sm">Increment</button>
-        <ul>{this.renderList()}</ul>
       </div>
     );
   }
@@ -50,7 +45,17 @@ class Counter extends Component {
   //Method to achieve conditional rendering use javascript
   renderTagsConditionally() {
     let tagLength = this.state.tags.length;
-    return tagLength === 0 ? <p>No tags</p> : <p>The tags are :</p>;
+    return tagLength === 0 ? (
+      <p>No tags</p>
+    ) : (
+      <div>
+        <p>The tags are :</p>
+        <span style={this.styles} className={this.getBadgeClasses()}>
+          {this.formatCount()}
+        </span>
+        <ul>{this.renderList()}</ul>
+      </div>
+    );
   }
 }
 
