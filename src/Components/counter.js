@@ -7,12 +7,12 @@ class Counter extends Component {
     tags: ["tag1", "tag2", "tag3"]
   };
 
-  constructor() {
-    //need to call the constructor of Component class from where we are inheriting
-    //super(); -> what is this
-    //In JS every function is an object, therefore the bind property can be used on each function.
-    //this.handleIncrements.bind(this); -> why bind is needed?
-  }
+  // constructor() {
+  //   //need to call the constructor of Component class from where we are inheriting
+  //   //super(); -> what is this
+  //   //In JS every function is an object, therefore the bind property can be used on each function.
+  //   //this.handleIncrements.bind(this); -> why bind is needed?
+  // }
   //you can use arraow functions to inherit without constructors and bind()
   // handleIncements= ->(){}
   handleIncrements() {
